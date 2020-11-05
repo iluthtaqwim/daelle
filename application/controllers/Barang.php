@@ -48,12 +48,17 @@ class Barang extends CI_Controller
         } else {
             $data['gambar'] = array('upload_data' => $this->upload->data());
             $fileijazah = $data['gambar']['upload_data']['file_name'];
+            $check1 = $this->input->post('size');
+            $ukuran = implode(",", $check1);
+            $checkboxes = $this->input->post('warna');
+            $warna = implode(",", $checkboxes);
             $data = array(
                 'kode_produk' => $this->input->post('kode_produk'),
                 'nama_produk' => $this->input->post('nama_produk'),
-                'id_size'     => $this->input->post('size'),
-                'warna'       => $this->input->post('warna'),
-                'gambar'      => $fileijazah
+                'size'     => $ukuran,
+                'warna'       => $warna,
+                'gambar'      => $fileijazah,
+
             );
             $this->barang->insert_data($data);
             redirect(site_url('barang'));
@@ -89,22 +94,30 @@ class Barang extends CI_Controller
 
                 $data['gambar'] = array('upload_data' => $this->upload->data());
                 $foto = $data['gambar']['upload_data']['file_name'];
+                $check1 = $this->input->post('size');
+                $ukuran = implode(",", $check1);
+                $checkboxes = $this->input->post('warna');
+                $warna = implode(",", $checkboxes);
                 $data = array(
                     'kode_produk' => $this->input->post('kode_produk'),
                     'nama_produk' => $this->input->post('nama_produk'),
-                    'id_size'     => $this->input->post('size'),
-                    'warna'       => $this->input->post('warna'),
+                    'size'        => $ukuran,
+                    'warna'       => $warna,
                     'gambar'      => $foto
                 );
                 $this->barang->update_produk(array('id_produk' => $this->input->post('id_produk')), $data);
                 redirect(site_url('barang'));
             }
         } else {
+            $check1 = $this->input->post('size');
+            $ukuran = implode(",", $check1);
+            $checkboxes = $this->input->post('warna');
+            $warna = implode(",", $checkboxes);
             $data = array(
                 'kode_produk' => $this->input->post('kode_produk'),
                 'nama_produk' => $this->input->post('nama_produk'),
-                'id_size'     => $this->input->post('size'),
-                'warna'       => $this->input->post('warna'),
+                'size'        => $ukuran,
+                'warna'       => $warna,
             );
             print_r($data);
 

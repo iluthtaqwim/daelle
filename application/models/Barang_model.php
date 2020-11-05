@@ -5,7 +5,7 @@ class Barang_model extends CI_Model
 
     public function get_all()
     {
-        $q = $this->db->query("SELECT produk.*, size.size FROM produk JOIN size ON produk.id_size = size.id_size WHERE data_delete = 'N'");
+        $q = $this->db->query("SELECT * FROM produk WHERE data_delete = 'N'");
         return $q->result();
     }
 

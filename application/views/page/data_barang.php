@@ -87,18 +87,62 @@
                     </div>
                     <div class="form-group">
                         <label for="">Ukuran</label>
-                        <select class="form-control" name="size" id="size" data-placeholder="Pilih ukuran">
-                            <option></option>
-                            <?php foreach ($size as $s) : ?>
-                                <option value="<?php echo $s->id_size; ?>"><?php echo $s->size; ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                       
                     </div>
+                            <?php foreach ($size as $s) : ?>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" name="size[]" id="" value="<?php echo $s->size; ?>"><?php echo $s->size; ?>
+                                    </label>
+                                </div>
+                           
+                            <?php endforeach; ?>
+                     
+                            <br>
                     <div class="form-group">
                         <label for="">Warna</label>
-                        <input type="text" name="warna" id="warna" class="form-control" placeholder="Warna" aria-describedby="helpId">
-
                     </div>
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="warna[]" id="" value="Biru"> Biru
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="warna[]" id="" value="Merah"> Merah
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="warna[]" id="" value="Kuning"> Kuning
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="warna[]" id="" value="Hitam"> Hitam
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="warna[]" id="" value="Putih"> Putih
+                            </label>
+                        </div>
+                        <div id="dinamic" class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-8">
+                                    <input type="text" class="form-control" name="warna[]" id="" aria-describedby="helpId" placeholder="">
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <button type="button" id="add" class="btn btn-success btn-lg"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                        </div>
+                        <small id="helpId" class="form-text text-muted">Jika tidak ada warna, tambahkan disini</small>
+                    </div>
+
                     <div class="form-group">
                         <label for="">Foto</label>
                         <input type="file" accept="image/*" name="foto" id="foto" class="form-control" placeholder="" aria-describedby="helpId">
@@ -117,29 +161,45 @@
 
 <script>
     $(document).ready(function() {
-        tampil_data_barang(); //pemanggilan fungsi tampil barang.
+        var i = 1;
+        $('#add').click(function() {
+            i++;
+            $('#dinamic').append('<div id="row'+i+'" class="row mt-1 mb-1"><div class="col-xs-12 col-md-8"><input type="text" class="form-control" name="warna[]" id="" aria-describedby="helpId" placeholder=""></div><div class="col-xs-12 col-md-4"> <button type = "button" id="'+i+'" class="btn btn-danger btn-lg btn_remove"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>')
+        });
+        $(document).on('click', '.btn_remove', function() {
+            var button_id = $(this).attr("id");
+            var res = confirm('Are You Sure You Want To Delete This?');
+            if (res == true) {
+                $('#row' + button_id + '').remove();
+                $('#' + button_id + '').remove();
+            }
+        });
 
-        $('#datatable').dataTable();
+   
 
-        //fungsi tampil barang
-        function tampil_data_barang() {
-            $.ajax({
-                type: 'ajax',
-                url: '<?php echo base_url() ?>/barang/get_data',
-                async: false,
-                dataType: 'json',
-                success: function(data) {
-                    var html = '';
-                    var i;
-                    var no = 1;
-                    for (i = 0; i < data.length; i++) {
-                        html += '<tr>' + '<td>' + no + '</td>' + '<td>' + data[i].kode_produk + '</td>' + '<td>' + data[i].nama_produk + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].warna + '</td>' + '<td><img src="<?php echo base_url(); ?>/uploads/' + data[i].gambar + '" height="64px"></td>' + '<td>' + data[i].on_create + '</td>' + '<td><button type="button" class="btn btn-sm btn-warning" onclick="editFunction(' + data[i].id_produk + ')"><i style="color:white" class="fas fa-edit"></i></button> <button type="button" onclick="deleteFunction(' + data[i].id_produk + ')" class="btn btn-sm btn-danger"><i  class="fas fa-trash"></i></button></td>' + '</tr>';
-                        no++;
-                    }
-                    $('#produk').html(html);
+    tampil_data_barang(); //pemanggilan fungsi tampil barang.
+
+    $('#datatable').dataTable();
+
+    //fungsi tampil barang
+    function tampil_data_barang() {
+        $.ajax({
+            type: 'ajax',
+            url: '<?php echo base_url() ?>/barang/get_data',
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                var html = '';
+                var i;
+                var no = 1;
+                for (i = 0; i < data.length; i++) {
+                    html += '<tr>' + '<td>' + no + '</td>' + '<td>' + data[i].kode_produk + '</td>' + '<td>' + data[i].nama_produk + '</td>' + '<td>' + data[i].size + '</td>' + '<td>' + data[i].warna + '</td>' + '<td><img src="<?php echo base_url(); ?>/uploads/' + data[i].gambar + '" height="64px"></td>' + '<td>' + data[i].on_create + '</td>' + '<td><button type="button" class="btn btn-sm btn-warning" onclick="editFunction(' + data[i].id_produk + ')"><i style="color:white" class="fas fa-edit"></i></button> <button type="button" onclick="deleteFunction(' + data[i].id_produk + ')" class="btn btn-sm btn-danger"><i  class="fas fa-trash"></i></button></td>' + '</tr>';
+                    no++;
                 }
-            });
-        }
+                $('#produk').html(html);
+            }
+        });
+    }
     });
 </script>
 
@@ -166,8 +226,8 @@
                 $('#id_produk').val(data.id_produk);
                 $('#kode_produk').val(data.kode_produk);
                 $('#nama_produk').val(data.nama_produk);
-                $('#size').val(data.id_size).attr("selected", "selected");
-                $('#warna').val(data.warna);
+                $('#size').val(data.size).attr("checked", "checked");
+                $('#warna').val(data.warna).attr("checked", "checked");;
                 $('#foto-lama').val(data.gambar);
 
                 $('#modelEdit').modal('show'); // show bootstrap modal when complete loaded
