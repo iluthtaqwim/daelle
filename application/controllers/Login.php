@@ -37,6 +37,14 @@ class Login extends CI_Controller
             redirect(base_url("home"));
         } else {
             echo '<script> alert("username atau password salah!")</script>';
+
+            redirect('login');
         };
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('login');
     }
 }

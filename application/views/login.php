@@ -28,7 +28,7 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Selamat Datang</p>
 
                 <form action="<?php echo base_url() ?>login/login_act" method="post">
                     <div class="input-group mb-3">

@@ -9,7 +9,13 @@ class Landing extends CI_Controller
         $this->load->view('landing-page');
     }
 
-    function detail(){
+    function detail()
+    {
         $this->load->view('page/detail');
+    }
+
+    function terms()
+    {
+        $this->load->view('page/terms');
     }
 }

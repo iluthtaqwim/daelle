@@ -40,8 +40,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                
-                <a class="nav-item nav-link" href="#">Terms & Conditions</a>
+
+                <a class="nav-item nav-link" href="<?php echo base_url() ?>landing/terms">Terms & Conditions</a>
 
             </div>
         </div>
@@ -92,7 +92,7 @@
     <br>
     <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
         <div class="margin-left:10px">
-            <pre style="color: white"> 
+            <pre style="color: white">
                 Telepon  : 081228203322
                 Email    : daellefashion.shop@gmail.com
                 Lokasi   : Purworejo, Jawa Tengah
