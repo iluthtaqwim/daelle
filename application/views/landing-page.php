@@ -53,38 +53,19 @@
             <h3>Daelle Fashion</h3>
             <br>
             <div class="container">
-                <div class="">
-                    <div class="card">
-                        <img class="card-img-top" src="https://cf.shopee.co.id/file/eadd84a7eef8e0bf522b242b2860e3d7" width="50" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">Nama Produk</h4>
+                <?php foreach ($get_all as $get) : ?>
+                    <div class="">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('uploads/' . $get->gambar) ?>" width="50" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $get->nama_produk ?></h4>
+                            </div>
                         </div>
+                        <br>
+                        <a href="<?php echo base_url('landing/detail/') . $get->id_produk ?>"><button type="button" class="btn btn-outline-primary">Lihat Detail</button></a>
                     </div>
                     <br>
-                    <a href="landing/detail"><button type="button" class="btn btn-outline-primary">Lihat Detail</button></a>
-                </div>
-                <br>
-                <div class="">
-                    <div class="card">
-                        <img class="card-img-top" src="https://cf.shopee.co.id/file/eadd84a7eef8e0bf522b242b2860e3d7" width="50" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">Nama Produk</h4>
-                        </div>
-                    </div>
-                    <br>
-                    <a href="http://"><button type="button" class="btn btn-outline-primary">Lihat Detail</button></a>
-                </div>
-                <br>
-                <div class="">
-                    <div class="card">
-                        <img class="card-img-top" src="https://cf.shopee.co.id/file/eadd84a7eef8e0bf522b242b2860e3d7" width="50" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">Nama Produk</h4>
-                        </div>
-                    </div>
-                    <br>
-                    <a href="http://"><button type="button" class="btn btn-outline-primary">Lihat Detail</button></a>
-                </div>
+                <?php endforeach; ?>
             </div>
         </center>
 

@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                
+
                 <a class="nav-item nav-link" href="#">Terms & Conditions</a>
 
             </div>
@@ -43,9 +43,10 @@
         </center>
         <div class="row">
 
+
             <div class="col-md-12 col-sm-12">
-                <img src="https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg" class="card-img-top" alt="...">
-               
+                <img src="<?php echo base_url('uploads/' . $details['gambar']); ?>" class="card-img-top" alt="...">
+
             </div>
 
             <div class="col-md-12 col-sm-12">
@@ -58,7 +59,7 @@
             </div>
         </div>
         <div class="card container" style="width: 18rem;">
-            <img src="https://cf.shopee.co.id/file/eadd84a7eef8e0bf522b242b2860e3d7" class="card-img-top" alt="...">
+            <img src="<?php echo base_url('uploads/' . $details['gambar']); ?>" class="card-img-top" alt="...">
             <div class="card-body">
 
             </div>
@@ -67,9 +68,9 @@
         <p>Kini ada gamis terbaru dari Daelle Fashion dengan model yang casual dan elegan, simple gak ribet tp pastinya tetap terlihat anggun yang cocok bunda pakai ke acara resmi ataupun santai. Dengan kualitas terbaik, dan harga yang terbaik juga tentunya. Banyak juga pilihan warnanya</p>
         <br>
         <div class="card container" style="width: 18rem;">
-            <img src="https://cf.shopee.co.id/file/eadd84a7eef8e0bf522b242b2860e3d7" class="card-img-top" alt="...">
+            <img src="<?php echo base_url('uploads/' . $details['gambar']); ?>" class="card-img-top" alt="...">
             <div class="card-body">
-              
+
             </div>
         </div>
         <br>
@@ -101,20 +102,10 @@
             <div class="row">
                 <div class="col-md-4">
                     <ul>
-                        <li>Navi</li>
-                        <li>Mustard</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li>Ungu taro</li>
-                        <li>Maroon</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li>Grey</li>
-                        <li>Dusti pink</li>
+                        <?php $colors = explode(",", $details['warna']);
+                        foreach ($colors as $color) :
+                            echo '<li>' . $color . '</li>';
+                        endforeach; ?>
                     </ul>
                 </div>
             </div>
@@ -122,13 +113,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://image.shutterstock.com/image-vector/example-sign-paper-origami-speech-260nw-1164503347.jpg" class="d-block w-100 img-fluid" alt="...">
+                    <img src="<?php echo base_url('uploads/' . $details['gambar']); ?>" class="d-block w-100 img-fluid" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://onaliternote.files.wordpress.com/2016/11/wp-1480230666843.jpg" class="d-block w-100 img-fluid" alt="...">
+                    <img src="<?php echo base_url('uploads/' . $details['gambar']); ?>" class="d-block w-100 img-fluid" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://onaliternote.files.wordpress.com/2016/11/wp-1480230666843.jpg" class="d-block w-100 img-fluid" alt="...">
+                    <img src="<?php echo base_url('uploads/' . $details['gambar']); ?>" class="d-block w-100 img-fluid" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -179,8 +170,18 @@
             <p>Untuk reques ukuran di luar acuan atau setandar size kami bund bisa pre order (PO).</p>
             <p>Estimasi produksi 14 hari.</p>
             <p><b>HARGA</b></p>
-        </center>
+            <p><b>Rp. 269.000,-</b></p>
+            <p><b>PROMO</b></p>
+            <p><b>FREE ONGKIR KE SELURUH PULAU JAWA</b></p>
+            <p>Poin – poin yang bisa membuang keraguan untuk belanja online.</p>
+            <p>Nih…
+                Baca yuk bunda….
+            </p>
+            <br>
+            <p>Lebih lengkapnya klik disini untuk membaca <a href="<?php echo base_url() ?>landing/terms">terms & condition kami.</a></p>
+            <p>Jika bunda masih ragu bunda bisa order lewat akun shopee kami. Admin kami nanti akan mengirimkan link shopee kami.</p>
 
+        </center>
     </div>
 
     <!-- Optional JavaScript -->
