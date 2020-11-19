@@ -35,20 +35,7 @@
 </head>
 
 <body style="background-color: ghostwhite;">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:  #ee6e73 ">
-        <img src="<?php echo base_url(); ?>/assets/images/daelle.png" width="70" height="50" alt="" srcset="">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="">Home <span class="sr-only">(current)</span></a>
-
-                <a class="nav-item nav-link" href="<?php echo base_url() ?>landing/terms">Terms & Conditions</a>
-
-            </div>
-        </div>
-    </nav>
+    <?php require_once('nav.php') ?>
     <div class=" container">
         <center>
             <br>
@@ -309,6 +296,7 @@
     </center> -->
     </div>
 
+    <?php require_once('footer.php'); ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

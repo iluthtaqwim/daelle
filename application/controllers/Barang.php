@@ -33,7 +33,7 @@ class Barang extends CI_Controller
         $config['upload_path']          = $upload_path;
         $config['allowed_types']        = 'jpg|png|jpeg';
         $config['overwrite']            = TRUE;
-        $config['max_size']             = '1000';
+        $config['max_size']             = '3000';
         $config["file_name"]            = $this->input->post('kode_produk');
         $this->load->library('upload', $config);
         $this->upload->initialize($config);

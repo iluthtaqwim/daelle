@@ -33,12 +33,12 @@
 <body>
 
     <nav>
-        <div class="nav-wrapper">
-            <a href=" #!" class="brand-logo">
+        <div class="nav-wrapper brown lighten-3">
+            <a href=" #!" class="brand-logo center">
                 <img src="<?php echo base_url(); ?>/assets/images/daelle.png" height="64" alt="" srcset="">
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
+            <ul class="left hide-on-med-and-down">
                 <li><a href="">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="<?php echo base_url() ?>landing/terms">Terms & Conditions</a></li>
 
@@ -80,23 +80,26 @@
                 Dilengkapi dengan harga yang Ekonomis dan Promo-promo menarik lainnya.</p>
             <br>
     </div>
-    <div class=" brown lighten-2 z-depth-5">
-        <?php foreach ($get_all as $get) : ?>
-            <div style="margin-top: 5%;" class="">
-                <img class="center" src="<?php echo base_url('uploads/' . $get->gambar) ?>" width="50%" alt="">
-                <center>
-                    <a class="btn disabled" style="margin-top: -20px;"><?php echo $get->nama_produk ?></a>
-                </center>
-                <br>
-                <center>
-                    <a href="<?php echo base_url('landing/detail/') . $get->id_produk ?>"><button type="button" style="color: white;" class="waves-effect waves-brown btn-flat">Lihat Detail</button></a>
-                </center>
 
-            </div>
-            <br>
-        <?php endforeach; ?>
+    <div class="brown lighten-2 z-depth-5">
+        <div class="row">
+            <?php foreach ($get_all as $get) : ?>
+                <div style="margin-top: 5%;" class="col s4">
+                    <img class="center z-depth-4" src="<?php echo base_url('uploads/' . $get->gambar) ?>" width="50%" alt="">
+                    <center>
+                        <a class="btn disabled" style="margin-top: -20px;"><?php echo $get->nama_produk ?></a>
+                    </center>
+                    <br>
+                    <center>
+                        <a href="<?php echo base_url('landing/detail/') . $get->id_produk ?>"><button type="button" style="color: white;" class="waves-effect waves-brown btn-flat">Lihat Detail</button></a>
+                    </center>
+
+                </div>
+
+            <?php endforeach; ?>
+        </div>
     </div>
-    <div class="red lighten-4">
+    <div class="black lighten-4">
         <center>
             <div style="margin:20px">
                 <img src="https://gif.berduflare.com/gif/bf7s3m5vbf0e3wy3zk/f7QXIUY34GQSiwff7N1tbP4PLrsCLRTVqRlmIYQtZlrw.gif#dc=f5d8d8&w=596&h=574" alt="">
@@ -104,7 +107,7 @@
 
         </center>
     </div>
-    <div class="brown lighten-3">
+    <div class="brown lighten-5">
         <center>
             <div style="margin:20px">
                 <img src="https://png.brdcdn.com/img/1200/bf7s3m5vbf0e3wy3zk/fCj4NFkEDs0bCbJfCdt17ucQEgqCRoSiSvoSuiph7g.png" alt="">
@@ -115,7 +118,7 @@
 
 
     <br>
-    <footer class="page-footer">
+    <footer class="page-footer brown lighten-3">
         <div class="container">
             <div class="row">
                 <div class="col l4 offset-l2 s12">
