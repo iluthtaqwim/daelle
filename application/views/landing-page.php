@@ -101,10 +101,11 @@
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="row">
+    <div class="black lighten-4">
 
-        <div class="col s12 m12">
-            <div class="black lighten-4">
+        <div class="row">
+            <div class="col s12 m12">
+
                 <center>
                     <div>
                         <img class="center z-depth-4" style="padding: 10px;" src="https://gif.berduflare.com/gif/bf7s3m5vbf0e3wy3zk/f7QXIUY34GQSiwff7N1tbP4PLrsCLRTVqRlmIYQtZlrw.gif#dc=f5d8d8&w=596&h=574" alt="">
@@ -113,9 +114,11 @@
                 </center>
             </div>
         </div>
+    </div>
+    <div class="brown lighten-5">
+        <div class="row">
+            <div class="col s12 m12">
 
-        <div class="col s12 m12">
-            <div class="brown lighten-5">
                 <center>
                     <div>
                         <img class="center z-depth-4" style="padding: 10px;" src="https://png.brdcdn.com/img/1200/bf7s3m5vbf0e3wy3zk/fCj4NFkEDs0bCbJfCdt17ucQEgqCRoSiSvoSuiph7g.png" alt="">
