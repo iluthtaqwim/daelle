@@ -35,7 +35,7 @@
     <nav>
         <div class="nav-wrapper brown lighten-3">
             <a href=" #!" class="brand-logo center">
-                <img src="<?php echo base_url(); ?>/assets/images/daelle.png" height="64" alt="" srcset="">
+                <img class="" style="padding: 5px;" src="<?php echo base_url(); ?>/assets/images/daelle.png" height="55px" alt="" srcset="">
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
@@ -69,6 +69,8 @@
         </div>
     </nav> -->
     <div class="container">
+
+
         <center>
             <br>
             <img src="https://png.brdcdn.com/img/1200/bf7s3m5vbf0e3wy3zk/fC9hpF2Ur6QhsDIfL83C05FsjEu4dGTe6JJO9j8PEZlA.png" width="80%" alt="" srcset="">
@@ -84,7 +86,7 @@
     <div class="brown lighten-2 z-depth-5">
         <div class="row">
             <?php foreach ($get_all as $get) : ?>
-                <div style="margin-top: 5%;" class="col s4">
+                <div style="margin-top: 5%;" class="col s12 m4">
                     <img class="center z-depth-4" src="<?php echo base_url('uploads/' . $get->gambar) ?>" width="50%" alt="">
                     <center>
                         <a class="btn disabled" style="margin-top: -20px;"><?php echo $get->nama_produk ?></a>
@@ -99,25 +101,33 @@
             <?php endforeach; ?>
         </div>
     </div>
-    <div class="black lighten-4">
-        <center>
-            <div style="margin:20px">
-                <img src="https://gif.berduflare.com/gif/bf7s3m5vbf0e3wy3zk/f7QXIUY34GQSiwff7N1tbP4PLrsCLRTVqRlmIYQtZlrw.gif#dc=f5d8d8&w=596&h=574" alt="">
-            </div>
+    <div class="row">
 
-        </center>
-    </div>
-    <div class="brown lighten-5">
-        <center>
-            <div style="margin:20px">
-                <img src="https://png.brdcdn.com/img/1200/bf7s3m5vbf0e3wy3zk/fCj4NFkEDs0bCbJfCdt17ucQEgqCRoSiSvoSuiph7g.png" alt="">
+        <div class="col s12 m12">
+            <div class="black lighten-4">
+                <center>
+                    <div>
+                        <img class="center z-depth-4" style="padding: 10px;" src="https://gif.berduflare.com/gif/bf7s3m5vbf0e3wy3zk/f7QXIUY34GQSiwff7N1tbP4PLrsCLRTVqRlmIYQtZlrw.gif#dc=f5d8d8&w=596&h=574" alt="">
+                    </div>
+
+                </center>
             </div>
-        </center>
+        </div>
+
+        <div class="col s12 m12">
+            <div class="brown lighten-5">
+                <center>
+                    <div>
+                        <img class="center z-depth-4" style="padding: 10px;" src="https://png.brdcdn.com/img/1200/bf7s3m5vbf0e3wy3zk/fCj4NFkEDs0bCbJfCdt17ucQEgqCRoSiSvoSuiph7g.png" alt="">
+                    </div>
+                </center>
+            </div>
+        </div>
     </div>
     </center>
 
 
-    <br>
+
     <footer class="page-footer brown lighten-3">
         <div class="container">
             <div class="row">
